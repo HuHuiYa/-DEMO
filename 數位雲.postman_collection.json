@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "015f545a-6c6b-48df-8af5-f2e7b815fc13",
+		"name": "數位雲",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4947139"
+	},
+	"item": [
+		{
+			"name": "GET 查詢所有產品 (無查詢參數)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 查詢特定產品 (根據 ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products/11",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 查詢產品 (帶有價格範圍參數)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products?between=price,10,15",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "between",
+							"value": "price,10,15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 查詢產品 (帶有排序參數)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products?sort=name,asc",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "name,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 查詢產品 (無產品匹配條件)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products?between=price,1000,1500",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "between",
+							"value": "price,1000,1500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 查詢產品 (無效的產品 ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products/99",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST 新增產品 (有效資料)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"new product\",\r\n  \"description\": \"This is a new product\",\r\n  \"price\": 20.99,\r\n  \"category_id\": 1,\r\n  \"brand_id\": 1,\r\n  \"product_image_id\": 1,\r\n  \"is_location_offer\": 1,\r\n  \"is_rental\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST 新增產品 (缺少必要字段)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"\",\r\n  \"description\": \"This is a new product\",\r\n  \"price\": 20.99,\r\n  \"category_id\": 1,\r\n  \"brand_id\": 1,\r\n  \"product_image_id\": 1,\r\n  \"is_location_offer\": 1,\r\n  \"is_rental\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST 新增產品 (價格字段為負數)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"new product\",\r\n  \"description\": \"This is a new product\",\r\n  \"price\": -20.99,\r\n  \"category_id\": 1,\r\n  \"brand_id\": 1,\r\n  \"product_image_id\": 1,\r\n  \"is_location_offer\": 1,\r\n  \"is_rental\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-with-bugs.practicesoftwaretesting.com/products",
+					"protocol": "https",
+					"host": [
+						"api-with-bugs",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
